@@ -1,20 +1,10 @@
-// Операторы присваивания
+// Порядок операторов
 
-let age = 18;
-age += 2; // age = age + 2
-age -= 2; // age = age - 2
-age *= 2; // age = age * 2
-age /= 2; // age = age / 2
+const isSuited = 100 - 10 > 90 - 5;
+console.log(isSuited);
 
-age++; // age + 1
-
-console.log(age);
-
-// Операторы сравнения
-
-const vasya = 20;
-console.log (age > vasya);
-console.log (age >= vasya);
-console.log (age < vasya);
-console.log (age <= vasya);
-console.log (age == vasya);
+let b;
+let c;
+c = b = 100 + 50;
+console.log(b);
+console.log(c);
