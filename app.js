@@ -1,23 +1,20 @@
-// Базовые арифметические операторы
+// Операторы присваивания
 
-const wight = 10;
-const height = 5;
-const space = wight * height;
-console.log(space);
+let age = 18;
+age += 2; // age = age + 2
+age -= 2; // age = age - 2
+age *= 2; // age = age * 2
+age /= 2; // age = age / 2
 
-const newWight = wight - 4;
-const newWight2 = wight + 4;
-console.log(newWight);
-console.log(newWight2);
+age++; // age + 1
 
-const division = newWight / newWight2;
-console.log(division);
+console.log(age);
 
-const volume = 5 ** 3;  // 5 в степени 3
-console.log(volume);
+// Операторы сравнения
 
-// Строки
-
-const city = 'Москва';
-const street = 'Новослободская';
-console.log(city + ', ' + street + ' ' + 5);
+const vasya = 20;
+console.log (age > vasya);
+console.log (age >= vasya);
+console.log (age < vasya);
+console.log (age <= vasya);
+console.log (age == vasya);
