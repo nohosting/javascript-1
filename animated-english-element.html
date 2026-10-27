@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f1e9">
+  <title>Animated English — Alexandra Telyukova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f4f1e9;--ink:#191b18;--orange:#e56d45;--lime:#cedb82;--serif:Georgia,'Times New Roman',serif;--sans:'DM Sans',Arial,sans-serif;--display:Manrope,'DM Sans',sans-serif}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--paper);font-family:var(--sans);color:var(--ink)}
+    .hero-art{width:min(680px,100vw);height:min(610px,90vh);min-height:420px;position:relative;display:grid;place-items:center;isolation:isolate;overflow:hidden;transform-style:preserve-3d;transition:transform .25s ease-out}
+    .art-glow{position:absolute;width:60%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#e9bb8e 0,#e9bb8e 28%,#d6d9a5 29%,#d6d9a5 48%,#e8e4d6 49%,#e8e4d6 66%,transparent 67%);filter:saturate(.72);animation:breathe 7s ease-in-out infinite;z-index:-2}
+    .art-orbit{position:absolute;border:1px solid #292b241f;border-radius:50%;width:83%;height:67%;transform:rotate(-25deg);animation:orbit 24s linear infinite}
+    .orbit-two{width:69%;height:91%;transform:rotate(42deg);border-style:dashed;animation:orbit-reverse 30s linear infinite}
+    .orbit-label{position:absolute;font-size:10px;font-weight:700;letter-spacing:1.5px;color:#727367}.orbit-label span{color:var(--orange);padding-left:6px}.label-top{top:13%;right:15%;transform:rotate(12deg)}.label-bottom{bottom:11%;left:11%;transform:rotate(-10deg)}
+    .floating-word{font-family:var(--display);font-weight:800;position:absolute;z-index:1;letter-spacing:-.09em;animation:float 5s ease-in-out infinite}.word-hello{font-size:clamp(56px,10vw,86px);color:var(--ink);transform:rotate(-8deg);left:13%;top:23%}.word-hello span{color:var(--orange)}.word-you{font-family:var(--serif);font-style:italic;font-size:clamp(50px,8vw,72px);color:#65714a;right:13%;top:28%;animation-delay:-2s}.word-go{font-size:clamp(40px,6vw,57px);color:var(--orange);right:18%;bottom:18%;transform:rotate(9deg);animation-delay:-1s}
+    .speech-card{position:relative;width:184px;height:190px;background:#f8f6ef;border:1px solid #26271e22;box-shadow:0 18px 55px #39372c22;transform:rotate(5deg);padding:17px 20px;animation:card-float 6s ease-in-out infinite}.speech-dots{display:flex;gap:5px}.speech-dots i{width:5px;height:5px;background:#c7c4b9;border-radius:50%}.speech-card p{font-family:var(--display);font-weight:700;font-size:34px;line-height:1.05;letter-spacing:-1.8px;margin:19px 0 13px}.speech-card p em{font-family:var(--serif);font-size:43px;font-weight:400;color:var(--orange)}
+    .sound-wave{height:18px;display:flex;gap:4px;align-items:center}.sound-wave i{width:3px;height:6px;background:#9ba174;border-radius:4px;animation:wave 1s ease-in-out infinite alternate}.sound-wave i:nth-child(2n){height:13px;animation-delay:-.4s}.sound-wave i:nth-child(3n){height:9px;animation-delay:-.7s}.sound-wave i:nth-child(4n){height:16px;animation-delay:-.2s}
+    .art-sticker{position:absolute;right:8%;top:12%;width:86px;height:86px;border-radius:50%;background:var(--orange);color:#fff5e9;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:9px;font-weight:700;letter-spacing:.7px;line-height:1.4;transform:rotate(12deg);box-shadow:0 7px 0 #ba5436;animation:float 4.2s ease-in-out infinite reverse}.art-sticker span{font-size:8px}.art-sticker b{position:absolute;font-size:19px;right:8px;bottom:7px;color:var(--lime)}
+    .spark{position:absolute;color:var(--orange);font-size:29px;animation:twinkle 2.5s ease-in-out infinite}.spark-a{top:25%;left:10%}.spark-b{bottom:23%;left:22%;font-size:18px;color:#71804c;animation-delay:-1s}.art-caption{position:absolute;bottom:3%;right:8%;font-size:9px;font-weight:700;letter-spacing:1.6px;color:#828176;display:flex;align-items:center;gap:9px}.caption-line{width:25px;height:1px;background:var(--orange)}
+    .hero-art:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:4;background:radial-gradient(circle at var(--light-x,50%) var(--light-y,50%),#ffffff42,transparent 30%);opacity:.5;mix-blend-mode:soft-light}
+    .hero-art:hover .speech-card{box-shadow:0 26px 70px #39372c35,0 0 0 5px #ffffff55}
+    .hero-art:hover .art-sticker{filter:saturate(1.2);box-shadow:0 9px 0 #ba5436,0 0 26px #e56d4540}
+    .speech-card:after{content:"";position:absolute;inset:7px;border:1px solid #e7e2d5;pointer-events:none;opacity:.65}
+    .sound-wave i{animation-name:wave-pop!important;animation-duration:calc(.45s + var(--bar-delay,0s))!important;transform-origin:center}
+    .sound-wave i:nth-child(1){--bar-delay:.2s}.sound-wave i:nth-child(2){--bar-delay:.05s}.sound-wave i:nth-child(3){--bar-delay:.3s}.sound-wave i:nth-child(4){--bar-delay:.1s}.sound-wave i:nth-child(5){--bar-delay:.25s}.sound-wave i:nth-child(6){--bar-delay:.08s}.sound-wave i:nth-child(7){--bar-delay:.32s}.sound-wave i:nth-child(8){--bar-delay:.15s}.sound-wave i:nth-child(9){--bar-delay:.27s}
+    .spark-a{animation:twinkle 2.5s ease-in-out infinite,spark-drift 5s ease-in-out infinite}.spark-b{animation:twinkle 2.5s ease-in-out infinite,spark-drift 6s ease-in-out infinite reverse}
+    @keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}@keyframes card-float{0%,100%{translate:0 0;rotate:5deg}50%{translate:0 -10px;rotate:2deg}}@keyframes breathe{0%,100%{scale:.97;rotate:-4deg}50%{scale:1.04;rotate:4deg}}@keyframes orbit{to{rotate:335deg}}@keyframes orbit-reverse{to{rotate:-318deg}}@keyframes wave{to{transform:scaleY(.4)}}@keyframes wave-pop{0%,100%{transform:scaleY(.35);opacity:.55}50%{transform:scaleY(1.15);opacity:1}}@keyframes spark-drift{0%,100%{translate:0 0}50%{translate:5px -9px}}@keyframes twinkle{0%,100%{scale:.75;rotate:0deg;opacity:.55}50%{scale:1.2;rotate:30deg;opacity:1}}
+    @media(max-width:480px){.hero-art{min-height:370px;height:90vw}.speech-card{width:145px;height:153px;padding:14px 16px}.speech-card p{font-size:28px;margin:14px 0 10px}.speech-card p em{font-size:35px}.art-sticker{width:70px;height:70px;font-size:7px}.orbit-label{font-size:8px}.art-caption{font-size:7px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+  </style>
+</head>
+<body>
+  <div class="hero-art" role="img" aria-label="Animated English words, orbiting shapes, and a spoken phrase">
+    <div class="art-glow"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+    <div class="orbit-label label-top">SPEAK <span>●</span></div><div class="orbit-label label-bottom">YOUR WAY <span>✳</span></div>
+    <div class="floating-word word-hello">hello<span>.</span></div><div class="floating-word word-you">you</div><div class="floating-word word-go">go!</div>
+    <div class="speech-card"><span class="speech-dots"><i></i><i></i><i></i></span><p>“I can do<br><em>this.</em>”</p><span class="sound-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="art-sticker">ENGLISH<br><span>UNLOCKED</span><b>↗</b></div><div class="spark spark-a">✳</div><div class="spark spark-b">✴</div>
+    <div class="art-caption"><span class="caption-line"></span> LESS TEXTBOOK. MORE YOU.</div>
+  </div>
+  <script>
+    const artwork=document.querySelector(".hero-art");
+    const motionOK=!window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(motionOK&&window.matchMedia("(hover: hover) and (pointer: fine)").matches){
+      let frame;
+      artwork.addEventListener("pointermove",(event)=>{
+        const box=artwork.getBoundingClientRect();
+        const x=(event.clientX-box.left-box.width/2)/(box.width/2);
+        const y=(event.clientY-box.top-box.height/2)/(box.height/2);
+        cancelAnimationFrame(frame);
+        frame=requestAnimationFrame(()=>{
+          artwork.style.transform=`rotateX(${(-y*3).toFixed(2)}deg) rotateY(${(x*3).toFixed(2)}deg)`;
+          artwork.style.setProperty("--light-x",`${((x+1)*50).toFixed(1)}%`);
+          artwork.style.setProperty("--light-y",`${((y+1)*50).toFixed(1)}%`);
+        });
+      });
+      artwork.addEventListener("pointerleave",()=>{artwork.style.transform="rotateX(0deg) rotateY(0deg)";artwork.style.setProperty("--light-x","50%");artwork.style.setProperty("--light-y","50%");});
+    }
+  </script>
+</body>
+</html>
