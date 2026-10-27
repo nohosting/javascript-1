@@ -1,25 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f3ed">
+  <title>Английский с Александрой Телюковой</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <h1>DOM API</h1>
+  <header class="site-header">
+    <a href="#top" class="wordmark" aria-label="Александра Телюкова, главная"><span class="wordmark-symbol">a<span>.</span></span><span class="wordmark-name">alexandra<br>telyukova</span></a>
+    <nav class="main-nav" aria-label="Главная навигация">
+      <a href="#approach">Метод</a><a href="#courses">Программы</a><a href="#about">Обо мне</a>
+    </nav>
+    <a class="header-cta" href="#contact">Записаться <span>↗</span></a>
+    <button class="menu-toggle" aria-label="Открыть меню"><span></span><span></span></button>
+  </header>
 
-    <div>
-        <input type="text" placeholder="todo">
-        <button>Add Task</button>
-    </div>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> АНГЛИЙСКИЙ, КОТОРЫЙ ОТКРЫВАЕТ МИР</div>
+        <h1>Твой голос.<br>Твой <span class="headline-accent">English.</span></h1>
+        <p class="hero-description">Заговори свободно и уверенно — с системой, которая работает для тебя. Персональные онлайн-занятия с Александрой Телюковой.</p>
+        <div class="hero-actions"><a href="#contact" class="button-primary">Подобрать программу <span>↗</span></a><a href="#approach" class="text-link">Как проходят занятия <span>↓</span></a></div>
+        <div class="hero-proof"><div class="avatar-stack"><span>А</span><span>М</span><span>Е</span><span>+</span></div><div><div class="proof-stars">★★★★★ <span>5.0</span></div><div class="proof-caption">ученики рекомендуют</div></div><div class="proof-divider"></div><div class="proof-years"><strong>8+</strong><span>лет помогаю<br>говорить смелее</span></div></div>
+      </div>
 
-    <ul id="todos"></ul>
+      <div class="hero-art" aria-label="Анимированная композиция с английскими словами" role="img">
+        <div class="art-glow"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="orbit-label label-top">SPEAK <span>●</span></div><div class="orbit-label label-bottom">YOUR WAY <span>✳</span></div>
+        <div class="floating-word word-hello">hello<span>.</span></div><div class="floating-word word-you">you</div><div class="floating-word word-go">go!</div>
+        <div class="speech-card"><span class="speech-dots"><i></i><i></i><i></i></span><p>“I can do<br><em>this.</em>”</p><span class="sound-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="art-sticker">ENGLISH<br><span>UNLOCKED</span><b>↗</b></div><div class="spark spark-a">✳</div><div class="spark spark-b">✴</div>
+        <div class="art-caption"><span class="caption-line"></span> LESS TEXTBOOK. MORE YOU.</div>
+      </div>
+      <div class="hero-bottom-note"><span>01 / 03</span><span>SCROLL TO EXPLORE</span><span class="scroll-line"></span></div>
+    </section>
 
-    <script src="app.js"></script>
+    <section class="ticker" aria-label="Направления обучения"><div class="ticker-track"><span>REAL ENGLISH</span><i>✳</i><span>REAL CONFIDENCE</span><i>✳</i><span>REAL PROGRESS</span><i>✳</i><span>REAL ENGLISH</span><i>✳</i><span>REAL CONFIDENCE</span><i>✳</i><span>REAL PROGRESS</span><i>✳</i></div></section>
+
+    <section class="intro-section" id="approach"><div class="section-kicker">01 — МОЙ ПОДХОД</div><div class="intro-content"><h2>Не учить язык.<br><span>Жить на нём.</span></h2><div class="intro-side"><p>Английский становится твоим, когда перестаёт быть школьным предметом. На занятиях мы говорим, пробуем, ошибаемся и растём — в твоём темпе и вокруг твоих целей.</p><a class="circle-link" href="#courses" aria-label="Смотреть программы">↘</a></div></div><div class="feature-row"><article><span class="feature-index">01</span><h3>Много говорим</h3><p>Практика с первого занятия — без страха ошибиться.</p></article><article><span class="feature-index">02</span><h3>Твой маршрут</h3><p>Программа под твой уровень, ритм жизни и задачи.</p></article><article><span class="feature-index">03</span><h3>Видимый прогресс</h3><p>Понятные ориентиры, регулярная обратная связь.</p></article></div></section>
+
+    <section class="teacher-section" id="about"><div class="teacher-visual"><div class="teacher-photo-placeholder"><span>А</span><span class="photo-note">YOUR TEACHER<br>YOUR ALLY</span></div><div class="teacher-stamp">LET'S<br>TALK <span>↗</span></div></div><div class="teacher-copy"><div class="section-kicker">02 — ТВОЙ ПРЕПОДАВАТЕЛЬ</div><h2>Привет,<br>я <span>Александра.</span></h2><p>Помогаю взрослым ученикам находить свой голос на английском — без зубрёжки и ощущения, что ты «недостаточно хорош». Вместе мы превращаем язык в инструмент для жизни, работы и новых возможностей.</p><a href="#contact" class="text-link dark-link">Познакомиться поближе <span>↗</span></a></div></section>
+
+    <section class="courses-section" id="courses"><div class="courses-heading"><div><div class="section-kicker">03 — ВЫБЕРИ СВОЙ ФОРМАТ</div><h2>Куда двинемся?</h2></div><span class="courses-note">ОНЛАЙН · ИНДИВИДУАЛЬНО</span></div><div class="course-cards"><article class="course-card"><span class="course-no">01 / START</span><span class="course-icon">↗</span><h3>Разговорный<br>английский</h3><p>Чтобы говорить увереннее каждый день — от small talk до больших идей.</p><a href="#contact">Узнать подробнее <span>↗</span></a></article><article class="course-card course-card-dark"><span class="course-no">02 / LEVEL UP</span><span class="course-icon">✳</span><h3>Английский<br>для работы</h3><p>Встречи, презентации и переписка — звучать профессионально и естественно.</p><a href="#contact">Узнать подробнее <span>↗</span></a></article><article class="course-card"><span class="course-no">03 / YOUR GOAL</span><span class="course-icon">◎</span><h3>Английский<br>под тебя</h3><p>Соберём персональную программу под конкретную цель и твой график.</p><a href="#contact">Узнать подробнее <span>↗</span></a></article></div></section>
+
+    <section class="contact-section" id="contact"><div class="contact-orb">hi<span>!</span></div><div class="section-kicker">ТВОЙ СЛЕДУЮЩИЙ ШАГ</div><h2>Готов(а) сказать<br><em>“I’m in”?</em></h2><p>Расскажи, зачем тебе английский — и я предложу, с чего начать.</p><a class="button-light" href="mailto:hello@alexandratelyukova.com">Давай знакомиться <span>↗</span></a><span class="contact-footnote">БЕЗ ОБЯЗАТЕЛЬСТВ. С ИНТЕРЕСОМ.</span></section>
+  </main>
+  <footer class="site-footer"><a href="#top" class="footer-brand">alexandra<span>.</span></a><span>Английский, который звучит как ты.</span><span>© 2025 ALEXANDRA TELYUKOVA</span></footer>
+  <script src="app.js"></script>
 </body>
-
 </html>
